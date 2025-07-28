@@ -1,0 +1,27 @@
+import { useState } from 'react';
+
+function ProgressInput({ onAdd }) {
+  const [task, setTask] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (task.trim() === '') return;
+
+    onAdd(task);
+    setTask('');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Enter your progress task..."
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+      />
+      <button type="submit">Add Task</button>
+    </form>
+  );
+}
+
+export default ProgressInput;
