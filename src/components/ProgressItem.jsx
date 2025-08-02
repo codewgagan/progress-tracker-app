@@ -2,7 +2,7 @@ function ProgressItem({ item, onDelete }) {
     console.log("ProgressItem data:", item);
 
   return (
-    <li style={{ marginBottom: "15px" }}>
+    <li className="progress-item" style={{ marginBottom: "15px" }}>
       <strong>{item.title}</strong> - {item.category} ({item.date})
       <p>{item.notes}</p>
       
